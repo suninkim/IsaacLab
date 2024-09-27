@@ -62,6 +62,7 @@ gym.register(
     entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
     kwargs={
         "env_cfg_entry_point": ik_rel_cobot_env_cfg.CobotCubeLiftEnvCfg,
+        "skrl_cfg_entry_point": f"{agents.__name__}:skrl_ppo_cfg.yaml",
         "robomimic_bc_cfg_entry_point": os.path.join(agents.__path__[0], "robomimic/bc.json"),
     },
     disable_env_checker=True,

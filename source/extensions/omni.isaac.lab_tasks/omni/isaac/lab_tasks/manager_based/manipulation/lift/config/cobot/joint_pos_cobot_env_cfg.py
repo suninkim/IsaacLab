@@ -81,7 +81,7 @@ class CobotCubeLiftEnvCfg(LiftEnvCfg):
             close_command_expr={"gripper_controller.*": -0.7},
         )
         # Set the body name for the end effector
-        self.commands.object_pose.body_name = "link6"
+        self.commands.object_pose.body_name = "grasp_target"
 
         # Set Cube as object
         self.scene.object = RigidObjectCfg(
@@ -111,10 +111,10 @@ class CobotCubeLiftEnvCfg(LiftEnvCfg):
             visualizer_cfg=marker_cfg,
             target_frames=[
                 FrameTransformerCfg.FrameCfg(
-                    prim_path="{ENV_REGEX_NS}/Robot/link6",
+                    prim_path="{ENV_REGEX_NS}/Robot/grasp_target",
                     name="end_effector",
                     offset=OffsetCfg(
-                        pos=[0.0, 0.0, 0.1034],
+                        pos=[0.0, 0.0, 0.0],
                     ),
                 ),
             ],

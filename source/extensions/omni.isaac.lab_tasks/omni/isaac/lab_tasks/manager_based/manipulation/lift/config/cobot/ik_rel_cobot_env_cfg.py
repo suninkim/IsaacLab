@@ -29,10 +29,10 @@ class CobotCubeLiftEnvCfg(joint_pos_cobot_env_cfg.CobotCubeLiftEnvCfg):
         self.actions.arm_action = DifferentialInverseKinematicsActionCfg(
             asset_name="robot",
             joint_names=["cobot_joint.*"],
-            body_name="link6",
+            body_name="grasp_target",
             controller=DifferentialIKControllerCfg(command_type="pose", use_relative_mode=True, ik_method="dls"),
-            scale=0.5,
-            body_offset=DifferentialInverseKinematicsActionCfg.OffsetCfg(pos=[0.0, 0.0, 0.080]),
+            scale=0.05,
+            body_offset=DifferentialInverseKinematicsActionCfg.OffsetCfg(pos=[0.0, 0.0, 0.0]),
         )
 
 
